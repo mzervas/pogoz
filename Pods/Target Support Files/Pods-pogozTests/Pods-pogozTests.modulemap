@@ -1,0 +1,6 @@
+framework module Pods_pogozTests {
+  umbrella header "Pods-pogozTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

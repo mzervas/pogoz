@@ -1,0 +1,6 @@
+framework module Pods_pogoz {
+  umbrella header "Pods-pogoz-umbrella.h"
+
+  export *
+  module * { export * }
+}
