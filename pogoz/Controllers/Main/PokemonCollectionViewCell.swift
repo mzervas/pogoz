@@ -86,7 +86,7 @@ extension PokemonCollectionViewCell {
         contentView.addSubview(messageLabel)
         
         messageLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imageView.snp.bottom)//.offset(12)
+            make.top.equalTo(imageView.snp.bottom)
             make.centerX.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }
