@@ -11,9 +11,7 @@ import pogozServices
 
 class PokemonDetailsViewModel {
     
-    struct Input {
-
-    }
+    struct Input { }
     
     struct Output {
         let titleText: Observable<String>
