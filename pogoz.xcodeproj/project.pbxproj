@@ -3134,7 +3134,6 @@
 		266FE064277109B500D4552D /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FE063277109B500D4552D /* PokemonManager.swift */; };
 		266FE06827710F1D00D4552D /* PokemonName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FE06727710F1D00D4552D /* PokemonName.swift */; };
 		266FE0A827715AA400D4552D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266FE0A727715AA400D4552D /* LaunchScreen.storyboard */; };
-		2674DB5F2785D3AB00415A69 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674DB5E2785D3AB00415A69 /* PokemonCollectionViewCell.swift */; };
 		267A8E812770DFC600AD8290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A8E802770DFC600AD8290 /* AppDelegate.swift */; };
 		267A8E8A2770DFC800AD8290 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267A8E892770DFC800AD8290 /* Assets.xcassets */; };
 		267A8E982770DFC900AD8290 /* pogozTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A8E972770DFC900AD8290 /* pogozTests.swift */; };
@@ -3147,6 +3146,7 @@
 		267A8EC12770E22600AD8290 /* pogozServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 267A8EBE2770E22600AD8290 /* pogozServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		267A8EC42770E22600AD8290 /* pogozServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267A8EBC2770E22600AD8290 /* pogozServices.framework */; };
 		267A8EC52770E22600AD8290 /* pogozServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 267A8EBC2770E22600AD8290 /* pogozServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2680AC2027860F2100D35401 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2680AC1F27860F2100D35401 /* PokemonCollectionViewCell.swift */; };
 		6D610F399663BA6496289C74 /* Pods_pogoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF18850D68AF6170EB6240E /* Pods_pogoz.framework */; };
 		F0B3B8EE5FDFC0F5CDF4F5AC /* Pods_pogoz_pogozUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F44FABFC4F853B47EFB25 /* Pods_pogoz_pogozUITests.framework */; };
 		F0F6EB15014CA6DC8C5C3A87 /* Pods_pogozTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252ECB2EB148EC7AF2A81B2 /* Pods_pogozTests.framework */; };
@@ -6319,7 +6319,6 @@
 		266FE063277109B500D4552D /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
 		266FE06727710F1D00D4552D /* PokemonName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonName.swift; sourceTree = "<group>"; };
 		266FE0A727715AA400D4552D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2674DB5E2785D3AB00415A69 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		267A8E7D2770DFC600AD8290 /* pogoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pogoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267A8E802770DFC600AD8290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		267A8E892770DFC800AD8290 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -6335,6 +6334,7 @@
 		267A8EBC2770E22600AD8290 /* pogozServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pogozServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		267A8EBE2770E22600AD8290 /* pogozServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pogozServices.h; sourceTree = "<group>"; };
 		267A8EBF2770E22600AD8290 /* pogozServices.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = pogozServices.docc; sourceTree = "<group>"; };
+		2680AC1F27860F2100D35401 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		319F44FABFC4F853B47EFB25 /* Pods_pogoz_pogozUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pogoz_pogozUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDC447615DE31349327BD97 /* Pods-pogozTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pogozTests.release.xcconfig"; path = "Target Support Files/Pods-pogozTests/Pods-pogozTests.release.xcconfig"; sourceTree = "<group>"; };
 		819C6F383C795051CAD1609B /* Pods-pogoz-pogozUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pogoz-pogozUITests.debug.xcconfig"; path = "Target Support Files/Pods-pogoz-pogozUITests/Pods-pogoz-pogozUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -9528,7 +9528,6 @@
 				26160300277B60160007A6FF /* PokemonTableViewCell.swift */,
 				267A8EB32770E1CB00AD8290 /* MainTableViewController.swift */,
 				267A8EB42770E1CB00AD8290 /* MainTableViewViewModel.swift */,
-				2674DB5E2785D3AB00415A69 /* PokemonCollectionViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -9623,9 +9622,8 @@
 		267A8EB22770E1CB00AD8290 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2680AC2127860F2A00D35401 /* Details */,
 				26161B6A277E06410007A6FF /* Main */,
-				26161B66277E03780007A6FF /* PokemonDetailsViewController.swift */,
-				26161B68277E03FB0007A6FF /* PokemonDetailsViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -9639,6 +9637,16 @@
 				267A8EBF2770E22600AD8290 /* pogozServices.docc */,
 			);
 			path = pogozServices;
+			sourceTree = "<group>";
+		};
+		2680AC2127860F2A00D35401 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				26161B66277E03780007A6FF /* PokemonDetailsViewController.swift */,
+				26161B68277E03FB0007A6FF /* PokemonDetailsViewModel.swift */,
+				2680AC1F27860F2100D35401 /* PokemonCollectionViewCell.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		B8E5D8B896DFC780AC8DB59C /* Pods */ = {
@@ -13093,7 +13101,7 @@
 			files = (
 				267A8EB62770E1CB00AD8290 /* MainTableViewViewModel.swift in Sources */,
 				267A8EB52770E1CB00AD8290 /* MainTableViewController.swift in Sources */,
-				2674DB5F2785D3AB00415A69 /* PokemonCollectionViewCell.swift in Sources */,
+				2680AC2027860F2100D35401 /* PokemonCollectionViewCell.swift in Sources */,
 				26161B69277E03FB0007A6FF /* PokemonDetailsViewModel.swift in Sources */,
 				267A8EB12770E00F00AD8290 /* AppCoordinator.swift in Sources */,
 				26160301277B60160007A6FF /* PokemonTableViewCell.swift in Sources */,
@@ -13275,10 +13283,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNXAS2ZQZY;
+				DEVELOPMENT_TEAM = P8NC3MA5Q7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = pogoz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -13291,7 +13298,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgz.pogoz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -13305,10 +13311,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MNXAS2ZQZY;
+				DEVELOPMENT_TEAM = P8NC3MA5Q7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = pogoz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -13321,7 +13326,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgz.pogoz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

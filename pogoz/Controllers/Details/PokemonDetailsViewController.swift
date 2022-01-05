@@ -26,11 +26,13 @@ class PokemonDetailsViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 150)
+        
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(PokemonCollectionViewCell.self, forCellWithReuseIdentifier: "defCell")
         view.allowsSelection = false
         view.showsHorizontalScrollIndicator = false
         view.delegate = self
+        
         return view
     }()
     
