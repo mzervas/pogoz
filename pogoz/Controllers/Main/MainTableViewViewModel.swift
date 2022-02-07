@@ -14,6 +14,10 @@ public protocol PokemonDetailsViewDelegate: AnyObject {
     func showPokemonDetails(for pokemon: PokemonShinyDetails)
 }
 
+public protocol PokemonDataSourceDelegate: AnyObject {
+    func setDataSource(_ pokemon: [PokemonShinyDetails])
+}
+
 class MainTableViewViewModel {
     
     struct Input {
@@ -42,6 +46,7 @@ class MainTableViewViewModel {
     let dataSource = BehaviorRelay<[PokemonShinyDetails]>(value: [])
     
     weak var delegate: PokemonDetailsViewDelegate?
+    weak var dataSourceDelegate: PokemonDataSourceDelegate?
     
     private let pokemonManager: PokemonManager
     private let bag = DisposeBag()
@@ -54,10 +59,10 @@ class MainTableViewViewModel {
         
         pokemonManager.getPokemonNames()
         
-        pokemonManager.shinyDetails
-            .subscribe(onNext: { [weak self] shinyDetails in
-                self?.resetDataSource()
-            }).disposed(by: bag)
+//        pokemonManager.shinyDetails
+//            .subscribe(onNext: { [weak self] shinyDetails in
+//                self?.resetDataSource()
+//            }).disposed(by: bag)
         
         didBeginEditing
             .subscribe(onNext: { [weak self] in
@@ -79,11 +84,11 @@ class MainTableViewViewModel {
             self?.resetDataSource()
         }).disposed(by: bag)
         
-        didSelectSuggestion.subscribe(onNext: { [weak self] indexPath in
-            guard let self = self else { return }
-            let pokemon = self.dataSource.value[indexPath.row]
-            self.delegate?.showPokemonDetails(for: pokemon)
-        }).disposed(by: bag)
+//        didSelectSuggestion.subscribe(onNext: { [weak self] indexPath in
+//            guard let self = self else { return }
+//            let pokemon = self.dataSource.value[indexPath.row]
+//            self.delegate?.showPokemonDetails(for: pokemon)
+//        }).disposed(by: bag)
         
 //        pokemonManager.shinyDetails
 //            .subscribe(onNext: { [weak self] pokemon in
@@ -92,9 +97,23 @@ class MainTableViewViewModel {
 //                }
 //            }).disposed(by: bag)
 
-//        pokemonManager.sansRxGetPokemonNames() { pokedex in
+//        pokemonManager.sansRxGetPokemonNames() { [weak self] pokedex in
 //            print("!!! \(pokedex["1"]?.name)")
+//            let shinyDetails = pokemonManager.shinyDetails.value.keys
+//            let newPokedex = shinyDetails.compactMap { pokemonManager.shinyDetails.value[$0] }.sorted(by: { $0.name < $1.name })
+//            self?.dataSourceDelegate?.setDataSource(newPokedex)
 //        }
+        
+        pokemonManager.sansRxPokemon() { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print("!!! ERROR: \(error)")
+            case .success(let data):
+                let shinyDetails = data.keys
+                let newPokedex = shinyDetails.compactMap { data[$0] }.sorted(by: { $0.name < $1.name })
+                self?.dataSourceDelegate?.setDataSource(newPokedex)
+            }
+        }
     }
     
     func resetDataSource() {

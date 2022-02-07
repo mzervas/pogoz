@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxDataSources
+import pogozServices
 
 class MainTableViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class MainTableViewController: UIViewController {
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = 50
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
         return tableView
     }()
     
@@ -35,6 +37,8 @@ class MainTableViewController: UIViewController {
         return view
     }()
     
+    var dataSource: [PokemonShinyDetails] = []
+    
     init(viewModel: MainTableViewViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -43,6 +47,7 @@ class MainTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.dataSourceDelegate = self
         setProperties()
         setTableView()
         
@@ -63,14 +68,14 @@ class MainTableViewController: UIViewController {
         tableView.rx.setDelegate(self)
             .disposed(by: bag)
         
-        viewModel.output.dataSource
-            .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: PokemonTableViewCell.self)) { row, model, cell in
-                cell.configure(viewModel: model)
-            }.disposed(by: bag)
+//        viewModel.output.dataSource
+//            .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: PokemonTableViewCell.self)) { row, model, cell in
+//                cell.configure(viewModel: model)
+//            }.disposed(by: bag)
         
-        tableView.rx.itemSelected
-            .bind(to: viewModel.input.didSelectSuggestion)
-            .disposed(by: bag)
+//        tableView.rx.itemSelected
+//            .bind(to: viewModel.input.didSelectSuggestion)
+//            .disposed(by: bag)
         
         searchController.searchBar.rx.text.orEmpty
             .bind(to: viewModel.input.didUpdateSearchText)
@@ -121,9 +126,41 @@ extension MainTableViewController: UISearchResultsUpdating {
     }
 }
 
+// MARK: PokemonDataSourceDelegate
+
+extension MainTableViewController: PokemonDataSourceDelegate {
+    func setDataSource(_ pokemon: [PokemonShinyDetails]) {
+        dataSource = pokemon
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+}
+
 // MARK: UITableViewDelegate
 
-extension MainTableViewController: UITableViewDelegate { }
+extension MainTableViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pokemon = dataSource[indexPath.row]
+        viewModel.delegate?.showPokemonDetails(for: pokemon)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell: PokemonTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PokemonTableViewCell {
+            cell.configure(viewModel: dataSource[indexPath.row])
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+}
 
 // MARK: UISearchBarDelegate
 

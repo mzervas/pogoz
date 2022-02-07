@@ -31,12 +31,12 @@ class PokemonDetailsViewController: UIViewController {
         view.register(PokemonCollectionViewCell.self, forCellWithReuseIdentifier: "defCell")
         view.allowsSelection = false
         view.showsHorizontalScrollIndicator = false
-        view.delegate = self
         
         return view
     }()
     
     var viewModel: PokemonDetailsViewModel
+    
     
     private var bag = DisposeBag()
     
@@ -60,6 +60,9 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     func configure() {
+        
+        collectionView.rx.setDelegate(self)
+            .disposed(by: bag)
         
         viewModel.output.titleText
             .bind(to: titleLabel.rx.text)
